@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TransFlow Logistics</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%232563eb'/><rect x='20' y='35' width='50' height='30' rx='3' fill='white'/><rect x='15' y='55' width='10' height='15' rx='2' fill='%231e40af'/><rect x='65' y='55' width='10' height='15' rx='2' fill='%231e40af'/><circle cx='25' cy='75' r='8' fill='%23374151'/><circle cx='65' cy='75' r='8' fill='%23374151'/><path d='M70,50 L85,35 L85,65 Z' fill='%23fbbf24'/></svg>">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="truck" class="w-8 h-8 text-blue-600"></i>
+          <span class="text-2xl font-bold text-gray-900">TransFlow</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8">
+          <button class="nav-link" data-target="home">Home</button>
+          <button class="nav-link" data-target="services">Services</button>
+          <button class="nav-link" data-target="tracking">Tracking</button>
+          <button class="nav-link" data-target="quote">Quote</button>
+          <button class="nav-link" data-target="about">About</button>
+          <button class="nav-link" data-target="contact">Contact</button>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-2 space-y-2">
+        <button class="mobile-link" data-target="home">Home</button>
+        <button class="mobile-link" data-target="services">Services</button>
+        <button class="mobile-link" data-target="tracking">Tracking</button>
+        <button class="mobile-link" data-target="quote">Quote</button>
+        <button class="mobile-link" data-target="about">About</button>
+        <button class="mobile-link" data-target="contact">Contact</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="pt-16 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Your Trusted Logistics Partner
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            Seamless freight solutions across North America with real-time tracking coming soon and 24/7 support
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button class="primary-btn" data-target="quote">Get a Quote</button>
+            <button class="secondary-btn" data-target="tracking">Track Shipment</button>
+          </div>
+        </div>
+
+        <div class="hidden md:block">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+            <i data-lucide="truck" class="w-full h-64 text-white opacity-80"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="bg-white py-12 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center">
+        <i data-lucide="truck" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+        <div class="stat-value">2,500+</div>
+        <div class="stat-label">Active Trucks</div>
+      </div>
+
+      <div class="text-center">
+        <i data-lucide="users" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+        <div class="stat-value">15,000+</div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+
+      <div class="text-center">
+        <i data-lucide="map-pin" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+        <div class="stat-value">48</div>
+        <div class="stat-label">States Covered</div>
+      </div>
+
+      <div class="text-center">
+        <i data-lucide="trending-up" class="w-8 h-8 text-blue-600 mx-auto mb-3"></i>
+        <div class="stat-value">99.8%</div>
+        <div class="stat-label">On-Time Delivery</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 bg-gray-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive logistics solutions tailored to your needs</p>
+    </div>
+
+    <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </section>
+
+  <!-- TRACKING 
+  <section id="tracking" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Track Your Shipment</h2>
+        <p class="section-subtitle">Real-time tracking for complete visibility</p>
+      </div>
+
+      <div class="bg-gray-50 p-8 rounded-xl shadow-md">
+        <label class="block text-sm font-medium mb-2">Tracking Number</label>
+        <input id="trackingInput" class="input" placeholder="Enter tracking number..." />
+
+        <button id="trackBtn" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 mt-4">
+          Track Shipment
+        </button>
+
+        <div id="trackingResult" class="hidden mt-8 p-6 bg-white rounded-lg border-2 border-blue-600"></div>
+      </div>
+    </div>
+  </section>-->
+
+  <!-- QUOTE -->
+  <section id="quote" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Get a Free Quote</h2>
+        <p class="section-subtitle">Competitive rates with no hidden fees</p>
+      </div>
+
+      <div id="quoteFormContainer" class="bg-white p-8 rounded-xl shadow-md"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="section-title">About TransFlow Logistics</h2>
+        <p class="about-text">With over 25 years of experience…</p>
+        <p class="about-text">We combine cutting-edge technology...</p>
+
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <i data-lucide="check-circle" class="icon-green"></i>
+            <p class="text-gray-700">DOT certified and fully insured</p>
+          </div>
+          <div class="flex items-start">
+            <i data-lucide="check-circle" class="icon-green"></i>
+            <p class="text-gray-700">24/7 customer support</p>
+          </div>
+          <div class="flex items-start">
+            <i data-lucide="check-circle" class="icon-green"></i>
+            <p class="text-gray-700">Advanced route optimization</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+        <h3 class="text-2xl font-bold mb-4">What Our Clients Say</h3>
+        <div id="testimonials"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-center">
+      <div class="contact-card">
+        <i data-lucide="phone"></i>
+        <h3 class="contact-title">Phone</h3>
+        <p class="text-gray-600">Available 24/7</p>
+        <a class="contact-link" href="tel:1-800-555-0123">1-800-555-0123</a>
+      </div>
+
+      <div class="contact-card">
+        <i data-lucide="mail"></i>
+        <h3 class="contact-title">Email</h3>
+        <p class="text-gray-600">We'll respond within 24hrs</p>
+        <a class="contact-link" href="mailto:info@transflow.com">info@transflow.com</a>
+      </div>
+
+      <div class="contact-card">
+        <i data-lucide="map-pin"></i>
+        <h3 class="contact-title">Headquarters</h3>
+        <p class="text-gray-600">
+          2500 Logistics Parkway<br>
+          Dallas, TX 75201
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i data-lucide="truck" class="w-8 h-8 text-blue-400"></i>
+            <span class="text-2xl font-bold">TransFlow</span>
+          </div>
+          <p class="text-gray-400">Your trusted logistics partner…</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><button class="footer-link" data-target="services">Services</button></li>
+            <li><button class="footer-link" data-target="tracking">Tracking</button></li>
+            <li><button class="footer-link" data-target="quote">Get Quote</button></li>
+            <li><button class="footer-link" data-target="about">About Us</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">Services</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>Full Truckload</li>
+            <li>LTL</li>
+            <li>Expedited Shipping</li>
+            <li>Intermodal</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>1-800-555-0123</li>
+            <li>info@transflow.com</li>
+            <li>2500 Logistics Parkway</li>
+            <li>Dallas, TX 75201</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+        © 2025 TransFlow Logistics. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
